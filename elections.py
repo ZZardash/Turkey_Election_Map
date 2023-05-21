@@ -36,7 +36,7 @@ def blend_colors(color1, color2, blend_percent):
     blended_rgb = tuple((1 - blend_percent) * c1 + blend_percent * c2 for c1, c2 in zip(rgb1, rgb2))
     return mcolors.to_hex(blended_rgb)
 
-def plot_cities_with_blend(sf, title, city_percentages):
+def plot_cities_with_blend(sf, title, city_percentages, color1, color2):
     plt.figure(figsize=(11, 9))
     fig, ax = plt.subplots(figsize=(11, 9))
     fig.suptitle(title, fontsize=16)
@@ -57,8 +57,6 @@ def plot_cities_with_blend(sf, title, city_percentages):
                 x_lon[ip] = shape_ex.points[ip][0]
                 y_lat[ip] = shape_ex.points[ip][1]
 
-            color1 = 'yellow'
-            color2 = '#E31119'
             blend_percent = percentages['yellow']
             blended_color = blend_colors(color1, color2, blend_percent)
 
@@ -152,7 +150,7 @@ city_percentages = {
     "Osmaniye": {"red": 0.6232, "yellow": 0.3074},
     "Duzce": {"red": 0.686, "yellow": 0.2491}
 }
-plot_cities_with_blend(sf, 'City Blending', city_percentages)
+plot_cities_with_blend(sf, 'City Blending', city_percentages, "white", "blue")
 plt.show()
 
 
