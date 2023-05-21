@@ -155,7 +155,7 @@ plt.show()
 
 
 
-#OTHER USEFULL FUNCTIONS FOR MAPPING
+#OTHER USEFUL FUNCTIONS FOR MAPPING
 """
 def show_dist(name):
     #to get the id of the city map to be plotted
